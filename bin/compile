@@ -28,7 +28,7 @@ if [ -f $BUILD_DIR/environment.yml ]; then
   $BIN_DIR/steps/conda-install $BUILD_DIR $CACHE_DIR
   # Add libgtk library support.
   tar xzf $ROOT_DIR/vendor/libgtk.tar.gz -C $BUILD_DIR/libs/
-  echo "export LD_LIBRARY_PATH=\"\$HOME/vendor/libs/\";" >> $BUILD_DIR/.profile.d/conda.sh
+  #echo "export LD_LIBRARY_PATH=\"\$HOME/vendor/libs/\";" >> $BUILD_DIR/.profile.d/conda.sh
   exit 0
 fi
 
