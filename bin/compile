@@ -26,6 +26,8 @@ ENV_DIR=$3
 if [ -f $BUILD_DIR/environment.yml ]; then
   echo "----------------- USING CONDA BUILDPACK -----------------"
   $BIN_DIR/steps/conda-install $BUILD_DIR $CACHE_DIR
+  # Add libgtk library support.
+  tar xzf $ROOT_DIR/vendor/libgtk.tar.gz -C /usr/lib/
   exit 0
 fi
 
@@ -250,9 +252,6 @@ set-default-env PYTHONPATH /app/
 
 # Install sane-default script for $WEB_CONCURRENCY and $FORWARDED_ALLOW_IPS.
 cp $ROOT_DIR/vendor/python.gunicorn.sh $GUNICORN_PROFILE_PATH
-
-# Add libgtk library support.
-tar xzf $ROOT_DIR/vendor/libgtk.tar.gz -C /usr/lib/
 
 # Experimental post_compile hook.
 bpwatch start post_compile
