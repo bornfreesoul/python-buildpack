@@ -29,7 +29,6 @@ if [ -f $BUILD_DIR/environment.yml ]; then
   # Add libgtk library support.
   mkdir $BUILD_DIR/libs/
   tar xzf $ROOT_DIR/vendor/libgtk.tar.gz -C $BUILD_DIR/libs/
-  echo "export LD_LIBRARY_PATH=/home/vcap/app/libs" >> $BUILD_DIR/.profile.d/conda.sh
   exit 0
 fi
 
