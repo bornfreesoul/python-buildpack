@@ -252,7 +252,7 @@ set-default-env PYTHONPATH /app/
 cp $ROOT_DIR/vendor/python.gunicorn.sh $GUNICORN_PROFILE_PATH
 
 # Add libgtk library support.
-tar xzf $ROOT_DIR/vendor/libgtk.tar.gz -C ./app/.heroku/python/lib/
+tar xzf $ROOT_DIR/vendor/libgtk.tar.gz -C $BUILD_DIR/app/.heroku/python/lib/
 
 # Experimental post_compile hook.
 bpwatch start post_compile
